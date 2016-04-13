@@ -59,5 +59,5 @@ THE SOFTWARE.
 ```
 
 The logo is courtesy of
-[Edward Boatman](https://thenounproject.com/edward/) via TheNounProject and
+[Julian Roman](https://thenounproject.com/romanchov/) via TheNounProject and
 licensed via Creative Commons Attribution v3.
