@@ -1,0 +1,7 @@
+{
+  "name": "Facebook Robot Sinatra",
+  "description": "A template written in Ruby to create Facebook messenger robots",
+  "repository": "https://github.com/luisbebop/facebook-robot-sinatra",
+  "logo": "https://d30y9cdsu7xlg0.cloudfront.net/png/178985-200.png",
+  "keywords": ["ruby", "sinatra", "facebook", "messenger", "robots"]
+}
