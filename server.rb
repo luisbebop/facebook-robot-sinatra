@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'json'
 require 'httparty'
+require 'pp'
 require './api_ai'
  
 #Bound to this address so that external hosts can access it, VERY IMPORTANT!
@@ -20,7 +21,9 @@ post '/page_webhook' do
   # get the message text
   message = payload["entry"].first["messaging"].first["message"]
   message = message["text"] unless message.nil?
-
+  
+  pp message
+  
   # ask Api.ai NLP api if it isn't a confirmation message from Facebook messenger API
   unless message.nil?
     @result = HTTParty.post(URL, 
