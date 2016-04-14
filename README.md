@@ -5,7 +5,7 @@ facebook-robot-sinatra
 
 ## Description
 
-A simple Facebook robot that echoes back the message you send to him. It's based on the official Facebook Messenger API.
+A simple Facebook robot that integrates with <https://api.ai>. It's based on the official Facebook Messenger API.
 You can use this as a template to create more complex Facebook robots using Ruby, Sinatra and Heroku.
 
 ## Deployment
@@ -24,10 +24,13 @@ heroku config:set VERIFY_TOKEN=3141516
  - Setup the Webhook on your Facebook App using the `VERIFY_TOKEN` you have previously defined and the url of your deployed Heroku app + `/page_webhook`
  - Get Page Access Token following the Facebook documentation
  - Subscribe the App to the Page following the Facebook documentation
- - Configure you `PAGE_ACCESS_TOKEN` on Heroku.
+ - Configure your `PAGE_ACCESS_TOKEN` on Heroku
+ - Configure your credentials from <https://api.ai>
 
 ```shell
 heroku config:set PAGE_ACCESS_TOKEN=ABC123
+heroku config:set APIAI_ACCESS_TOKEN=xpto
+heroku config:set APIAI_SUBSCRIPTION_KEY=xpto
 ```
 
 ## Test

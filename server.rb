@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'json'
 require 'httparty'
+require './api_ai'
  
 #Bound to this address so that external hosts can access it, VERY IMPORTANT!
 set :bind, '0.0.0.0'
@@ -20,11 +21,11 @@ post '/page_webhook' do
   message = payload["entry"].first["messaging"].first["message"]
   message = message["text"] unless message.nil?
 
-  # echoing message back if it isn't a confirmation message from Facebook messenger API
+  # ask Api.ai NLP api if it isn't a confirmation message from Facebook messenger API
   unless message.nil?
     @result = HTTParty.post(URL, 
         :body => { :recipient => { :id => sender}, 
-                   :message => { :text => message}
+                   :message => { :text => ApiAi.chat(params['msg'])}
                  }.to_json,
         :headers => { 'Content-Type' => 'application/json' } )
   end
