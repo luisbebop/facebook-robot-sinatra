@@ -25,7 +25,7 @@ post '/page_webhook' do
   unless message.nil?
     @result = HTTParty.post(URL, 
         :body => { :recipient => { :id => sender}, 
-                   :message => { :text => ApiAi.chat(params['msg'])}
+                   :message => { :text => ApiAi.chat(message)}
                  }.to_json,
         :headers => { 'Content-Type' => 'application/json' } )
   end
