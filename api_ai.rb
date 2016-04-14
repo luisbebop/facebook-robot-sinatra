@@ -1,4 +1,5 @@
 require 'api-ai-ruby'
+require 'pp'
 
 module ApiAi
   # init API.ai
@@ -9,6 +10,10 @@ module ApiAi
   
   def self.chat(message)
     response = @ai_client.text_request(message)
+    
+    puts "called api-ai-ruby"
+    pp response
+    
     if response[:result][:speech] == ""
       response[:result][:metadata][:html]
     else
