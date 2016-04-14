@@ -33,6 +33,12 @@ heroku config:set APIAI_ACCESS_TOKEN=xpto
 heroku config:set APIAI_SUBSCRIPTION_KEY=xpto
 ```
 
+  - Don't forget to configure your Facebook Page messenger to send updates to your app
+
+```shell
+curl -ik -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<token>"
+```
+
 ## Test
 You should have by now a functional robot in your Facebook page echoing back your messages. Just open the Facebook page and send a message to your robot.
 
