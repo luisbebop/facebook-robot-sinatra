@@ -9,8 +9,11 @@ module ApiAi
   
   def self.chat(message)
     response = @ai_client.text_request(message)
+        
     if response[:result][:speech] == ""
-      response[:result][:metadata][:html]
+      if response[:result][:metadata][:html].nil?
+        "I don't have an answer for that. Could you rephrase it?"
+      end
     else
       response[:result][:speech]
     end
